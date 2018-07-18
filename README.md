@@ -21,3 +21,11 @@ MVP + RxJava2 + Retrofit2 + Dagger2 学习Demo
 
 感谢  https://github.com/codeestX/GeekNews
 Demo参考了GeekNews，仅保留了结构干净的MVP结构，加入了一个接口测试用例
+
+# TODO
+
+# 腾讯的bugly（BUG上报）,X5(web)
+# 热修复，AndFix /Tinker
+# 流媒体/直播技术、文档 、IM
+# 相机/图片/文字识别/语音
+# 地图相关
