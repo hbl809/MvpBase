@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="bottom_height">40dp</dimen>
+    <dimen name="main_title_bar_height">45dp</dimen>
+    <dimen name="buttom_menu_margin">45dp</dimen>
+    <dimen name="buttom_menu_height">60dp</dimen>
+</resources>

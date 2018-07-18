@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        activeColor="#@color/activeColor"
+        icon="@drawable/tab_menu_1_selected"
+        id="@+id/tab_search"
+        inActiveColor="@color/inActiveColor"
+        title="@string/main_bottom_menu_scancode" />
+    <tab
+        activeColor="#@color/activeColor"
+        icon="@drawable/tab_menu_2_selected"
+        id="@+id/tab_book"
+        inActiveColor="@color/inActiveColor"
+        title="@string/main_bottom_menu_book" />
+    <tab
+        activeColor="#@color/activeColor"
+        icon="@drawable/tab_menu_3_selected"
+        id="@+id/tab_question"
+        inActiveColor="@color/inActiveColor"
+        title="@string/main_bottom_menu_question" />
+    <tab
+        activeColor="#@color/activeColor"
+        icon="@drawable/tab_menu_4_selected"
+        id="@+id/tab_collection"
+        inActiveColor="@color/inActiveColor"
+        title="@string/main_bottom_menu_collection" />
+    <tab
+        activeColor="#@color/activeColor"
+        icon="@drawable/tab_menu_5_selected"
+        id="@+id/tab_me"
+        inActiveColor="@color/inActiveColor"
+        title="@string/main_bottom_menu_me" />
+</tabs>
