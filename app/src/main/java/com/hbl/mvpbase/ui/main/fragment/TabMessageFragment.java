@@ -13,20 +13,20 @@ import butterknife.BindView;
 /**
  *
  */
-public class TabQuestionFragment extends BaseMvpFragment<MainPresenter> implements MainContract.View  {
+public class TabMessageFragment extends BaseMvpFragment<MainPresenter> implements MainContract.View  {
     @BindView(R.id.tv_msg)
     TextView mTvMessage;
+
     private static final String ARG_PARAM1 = "param1";
     private String mParam1;
+    public TabMessageFragment() {
 
-    public TabQuestionFragment() {
     }
 
-
-    public static TabQuestionFragment newInstance(String param1) {
-        TabQuestionFragment fragment = new TabQuestionFragment();
+    public static TabMessageFragment newInstance(String param1) {
+        TabMessageFragment fragment = new TabMessageFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM1,param1);
         fragment.setArguments(args);
         return fragment;
     }

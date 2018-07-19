@@ -4,11 +4,11 @@ import android.app.Activity;
 
 import com.hbl.mvpbase.di.module.FragmentModule;
 import com.hbl.mvpbase.di.scope.FragmentScope;
-import com.hbl.mvpbase.ui.main.fragment.TabBookFragment;
-import com.hbl.mvpbase.ui.main.fragment.TabCollectionFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabContactFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabDiscoverFragment;
 import com.hbl.mvpbase.ui.main.fragment.TabMeFragment;
-import com.hbl.mvpbase.ui.main.fragment.TabQuestionFragment;
-import com.hbl.mvpbase.ui.main.fragment.TabSearchFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabMessageFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabNewsFragment;
 
 import dagger.Component;
 
@@ -19,13 +19,13 @@ import dagger.Component;
 @FragmentScope
 @Component(dependencies = AppComponent.class, modules = FragmentModule.class)
 public interface FragmentComponent {
-
     Activity getActivity();
+    void inject(TabNewsFragment tabNewsFragment);
+    void inject(TabMessageFragment tabMessageFragment);
+    void inject(TabContactFragment tabContactFragment);
+    void inject(TabDiscoverFragment tabDiscoverFragment);
+    void inject(TabMeFragment tabMeFragment);
 
-    void inject(TabBookFragment dailyFragment);
-    void inject(TabCollectionFragment themeFragment);
-    void inject(TabMeFragment dailyFragment);
-    void inject(TabQuestionFragment themeFragment);
-    void inject(TabSearchFragment themeFragment);
+
 
 }

@@ -24,7 +24,6 @@ public class RetrofitHelper implements HttpHelper {
         this.mDoDoApiService=dodoApiService;
     }
 
-
     @Override
     public Flowable<WXHttpResponse<List<WXItemBean>>> fetchWechatListInfo(int num, int page) {
         return mWechatApiService.getWXHot(Constants.KEY_API, num, page);

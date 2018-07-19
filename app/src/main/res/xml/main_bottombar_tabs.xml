@@ -3,27 +3,27 @@
     <tab
         activeColor="#@color/activeColor"
         icon="@drawable/tab_menu_1_selected"
-        id="@+id/tab_search"
+        id="@+id/main_tab_news"
         inActiveColor="@color/inActiveColor"
-        title="@string/main_bottom_menu_scancode" />
-    <tab
-        activeColor="#@color/activeColor"
-        icon="@drawable/tab_menu_2_selected"
-        id="@+id/tab_book"
-        inActiveColor="@color/inActiveColor"
-        title="@string/main_bottom_menu_book" />
+        title="@string/main_bottom_menu_news" />
     <tab
         activeColor="#@color/activeColor"
         icon="@drawable/tab_menu_3_selected"
-        id="@+id/tab_question"
+        id="@+id/main_tab_message"
         inActiveColor="@color/inActiveColor"
-        title="@string/main_bottom_menu_question" />
+        title="@string/main_bottom_menu_message" />
+    <tab
+        activeColor="#@color/activeColor"
+        icon="@drawable/tab_menu_2_selected"
+        id="@+id/main_tab_contact"
+        inActiveColor="@color/inActiveColor"
+        title="@string/main_bottom_menu_contact" />
     <tab
         activeColor="#@color/activeColor"
         icon="@drawable/tab_menu_4_selected"
-        id="@+id/tab_collection"
+        id="@+id/main_tab_discover"
         inActiveColor="@color/inActiveColor"
-        title="@string/main_bottom_menu_collection" />
+        title="@string/main_bottom_menu_discover" />
     <tab
         activeColor="#@color/activeColor"
         icon="@drawable/tab_menu_5_selected"

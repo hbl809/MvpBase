@@ -28,12 +28,16 @@ public class WelcomeActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
          super.onCreate(savedInstanceState);
 
-         StatusBarUtil.setColor(this, getResources().getColor(R.color.colorBackground));
+        //StatusBarUtil.setColor(this, getResources().getColor(R.color.transparent_color));
+        //StatusBarUtil.setTransparent(this);
+
+        StatusBarUtil.setColor(this, getResources().getColor(R.color.colorBackground), 0);
+
     }
 
     @Override

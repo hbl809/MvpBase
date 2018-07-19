@@ -5,23 +5,27 @@ import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.hbl.mvpbase.R;
 import com.hbl.mvpbase.base.BaseMvpActivity;
 import com.hbl.mvpbase.contract.main.MainContract;
 import com.hbl.mvpbase.presenter.main.MainPresenter;
-import com.hbl.mvpbase.ui.main.fragment.TabBookFragment;
-import com.hbl.mvpbase.ui.main.fragment.TabCollectionFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabContactFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabDiscoverFragment;
 import com.hbl.mvpbase.ui.main.fragment.TabMeFragment;
-import com.hbl.mvpbase.ui.main.fragment.TabQuestionFragment;
-import com.hbl.mvpbase.ui.main.fragment.TabSearchFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabMessageFragment;
+import com.hbl.mvpbase.ui.main.fragment.TabNewsFragment;
+import com.jaeger.library.StatusBarUtil;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
 import butterknife.BindView;
 
 public class MainActivity extends BaseMvpActivity<MainPresenter> implements MainContract.View {
-
+    @BindView(R.id.tool_bar)
+    Toolbar mToolBar;
     @BindView(R.id.bottomBar)
     BottomBar mBottomBar;
 
@@ -33,13 +37,20 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
             FragmentManager fragmentManager = getSupportFragmentManager();
-            Fragment fragment = TabSearchFragment.newInstance("111");
+            Fragment fragment = TabNewsFragment.newInstance("111");
             fragmentManager.beginTransaction()
                     .replace(R.id.contentContainer, fragment, FRAGMENT_SEARCH).commit();
         }
+
+        int mColor = getResources().getColor(R.color.colorPrimary);
+        // mToolBar.setBackgroundColor(mColor);
+        StatusBarUtil.setColor(this, mColor, 0);
+        mToolBar.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -56,6 +67,7 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
                 tabSelectMsg(tabId);
             }
         });
+        //setToolBar(mToolBar,"测试");
     }
 
     //Tab切换
@@ -83,34 +95,34 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
             ft.hide(me_fragment);
         }
         switch (menuItemId) {
-            case R.id.tab_search:
+            case R.id.main_tab_news:
                 if (search_fragment == null) {
-                    search_fragment = TabSearchFragment.newInstance("111");
+                    search_fragment = TabNewsFragment.newInstance("111");
                     ft.add(R.id.contentContainer, search_fragment, FRAGMENT_SEARCH);
                 } else {
                     ft.show(search_fragment);
                 }
                 break;
-            case R.id.tab_book:
+            case R.id.main_tab_message:
                 if (book_list_fragment == null) {
-                    book_list_fragment = TabBookFragment.newInstance("2222");
+                    book_list_fragment = TabMessageFragment.newInstance("2222");
                     ft.add(R.id.contentContainer, book_list_fragment, FRAGMENT_BOOK_LIST);
                 } else {
                     ft.show(book_list_fragment);
                 }
                 break;
-            case R.id.tab_question:
+            case R.id.main_tab_contact:
                 if (question_fragment == null) {
-                    question_fragment = TabQuestionFragment.newInstance("33333");
+                    question_fragment = TabContactFragment.newInstance("33333");
                     ft.add(R.id.contentContainer, question_fragment,
                             FRAGMENT_QUESTION);
                 } else {
                     ft.show(question_fragment);
                 }
                 break;
-            case R.id.tab_collection:
+            case R.id.main_tab_discover:
                 if (collection_fragment == null) {
-                    collection_fragment = TabCollectionFragment.newInstance("444444");
+                    collection_fragment = TabDiscoverFragment.newInstance("444444");
                     ft.add(R.id.contentContainer, collection_fragment,
                             FRAGMENT_COLLECTION);
                 } else {
